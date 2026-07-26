@@ -1,0 +1,15 @@
+/node_modules
+/.next
+/out
+/playwright-report
+/test-results
+/content-source
+/portfolio-assets
+/artifacts
+/portfolio-content-transfer
+/scripts
+/DESIGN.md
+/Screencast from 07-22-2026 10:09:46 PM.webm
+*.tsbuildinfo
+.env*
+!.env.example

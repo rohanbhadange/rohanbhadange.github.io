@@ -1,0 +1,8 @@
+import Image from "next/image";
+import { portfolio } from "@/config/portfolio";
+
+export function AboutMasonry() {
+  const [lead, flankLeft, flankRight, ...items] = portfolio.about.galleryItems;
+  const framedImage = (item: typeof flankLeft, index: number) => <div key={item.src} className={`overflow-hidden border border-zinc-700 bg-zinc-900 transition duration-500 hover:-translate-y-1 hover:border-cyan-700 ${index%3===0?"rounded-[26px]":"rounded-2xl"}`}><Image src={item.src} alt="" width={item.width} height={item.height} sizes="(max-width: 640px) 48vw, (max-width: 1024px) 32vw, 24vw" className="h-auto w-full"/></div>;
+  return <section aria-labelledby="about-gallery-title" className="section-space"><div className="about-shell"><h2 id="about-gallery-title" className="font-medium text-[clamp(1.35rem,2.5vw,2.15rem)] tracking-[-.04em] lg:whitespace-nowrap">{portfolio.about.galleryTitle}</h2><div data-testid="about-masonry" className="mt-10 sm:mt-12"><div className="mb-3 grid grid-cols-2 items-start gap-3 sm:mb-4 sm:gap-4 lg:grid-cols-3"><div className="order-1 col-span-2 flex justify-center lg:order-2 lg:col-span-1"><Image src={lead.src} alt="" width={lead.width} height={lead.height} sizes="(max-width: 640px) 78vw, 33vw" className="h-auto max-h-[68vh] w-auto max-w-[78%] rounded-2xl lg:max-w-full" priority/></div><div className="order-2 lg:order-1">{framedImage(flankLeft,0)}</div><div className="order-3">{framedImage(flankRight,1)}</div></div><div className="columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4">{items.map((item,index)=><div key={item.src} className="mb-3 break-inside-avoid sm:mb-4">{framedImage(item,index+2)}</div>)}</div></div></div></section>;
+}
