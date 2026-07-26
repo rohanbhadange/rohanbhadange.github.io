@@ -242,7 +242,7 @@ export const portfolio = {
   site: {
     name: "Rohan Bhadange",
     role: "Mechanical Engineering and Computer Science Student",
-    title: "Rohan Bhadange — Mechanical Engineering & Computer Science",
+    title: "Rohan Bhadange",
     description: "Portfolio of Rohan Bhadange, a Mechanical Engineering and Computer Science student at Virginia Tech.",
     email: "rohanbhadange18@gmail.com",
     location: "New York, United States",
