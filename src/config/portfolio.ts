@@ -1,3 +1,5 @@
+import { recoveredProjects } from "./recovered-projects";
+
 export type IconKey = "home" | "user" | "projects" | "mail" | "arrow" | "download";
 export type TechnologyIconKey = "siemens" | "ansys" | "python" | "pytorch" | "langchain" | "langgraph" | "databricks" | "nvidia" | "ros" | "onnx" | "webrtc" | "yolo" | "ultralytics" | "database" | "layers" | "network" | "tolerance" | "prototype";
 
@@ -376,6 +378,7 @@ export const portfolio = {
       rotationSpeed: 0.2,
     },
     items: [
+      ...recoveredProjects,
       {
         order: 2,
         slug: "rover-autonomy-simulator",

@@ -7,11 +7,12 @@ export default defineConfig({
   reporter: [["list"]],
   use: {
     baseURL: "http://127.0.0.1:3200",
-    trace: "retain-on-failure",
+    launchOptions: { args: ["--disable-gpu"] },
+    trace: process.env.CI ? "retain-on-failure" : "off",
     screenshot: "only-on-failure",
   },
   webServer: {
-    command: "python3 -m http.server 3200 --directory out >/tmp/secondportfolio-static-server.log 2>&1",
+    command: "node tooling/serve-static.mjs",
     url: "http://127.0.0.1:3200",
     reuseExistingServer: false,
     timeout: 30_000,
