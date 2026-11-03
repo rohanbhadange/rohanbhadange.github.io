@@ -34,3 +34,5 @@ Original reports, source CAD/code, revision histories and unpublished evidence b
 Keep one checkout per OS outside Drive/OneDrive. Inspect and preserve dirty/untracked work before pulling. Exchange website changes through Git commits. Use `git pull --ff-only` only on a clean, compatible branch; preserve divergent Ubuntu work on a recovery branch before reconciling it.
 
 Pushing to `main` deploys the static export through GitHub Actions. The old Windows `portfolio` repository is historical content and should not replace this checkout.
+
+Deployment is gated by typecheck, lint, the production build, and the recovered-project browser checks at mobile, tablet, and desktop sizes. Keep changes in small related commits, inspect the changed live pages after deployment, and use `git revert` on the specific commit if a published regression needs rollback. Existing project URLs are preserved when changing their presentation scope.
