@@ -28,3 +28,11 @@ test("project index discovers the recovered work", async ({ page }) => {
     await expect(page.locator(`a[href='/projects/${project.slug}'], a[href='/projects/${project.slug}/']`).first()).toBeAttached();
   }
 });
+
+test("ISAME describes motion systems and enclosure as the primary contribution", async ({ page }) => {
+  await page.goto("/projects/isame-camera-integration/", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("heading", { level: 1, name: "ISAME Motion Systems and Enclosure" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Motion systems within the mechanical assembly." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "An enclosure that works with the system inside it." })).toBeVisible();
+  await expect(page.getByText("My ISAME work spans the mechanical system", { exact: false })).toBeVisible();
+});

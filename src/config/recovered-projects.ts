@@ -139,32 +139,48 @@ export const recoveredProjects: Project[] = [
   {
     "order": 10,
     "slug": "isame-camera-integration",
-    "title": "ISAME Camera Integration",
-    "discipline": "Mechanical Design / Optical Packaging",
+    "title": "ISAME Motion Systems and Enclosure",
+    "discipline": "Mechanical Systems / Motion / Enclosure Design",
     "year": "2026",
-    "excerpt": "Camera brackets and enclosure interfaces designed around measured board geometry, rail sections, viewing direction, and service access.",
+    "excerpt": "Mechanical-system development for ISAME, with primary focus on motion systems and enclosure design, alongside base-plate, mounting, and camera integration work.",
     "tags": [
       "SolidWorks",
-      "Sheet metal",
-      "Camera integration",
-      "Fabrication"
+      "Motion systems",
+      "Enclosure design",
+      "Mechanical integration"
     ],
     "imageUrl": "/projects/recovered/isame-corner-bracket.webp",
-    "mediaAlt": "ISAME Camera Integration — project evidence",
+    "mediaAlt": "Camera bracket developed as one part of the wider ISAME mechanical-system work",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
     "overviewHeading": "The project",
     "overview": [
-      "The ISAME work includes base-plate concepts, camera integration assemblies, and several mounting iterations for an instrument enclosure. The mounting problem combines optical direction with fastening, cable routing, and the actual frame geometry.",
-      "The image shows a later corner-bracket iteration. A separate documented optical mount uses a bent aluminum sheet to establish a fixed viewing angle from an upper rail."
+      "My ISAME work spans the mechanical system, with primary focus on motion systems and enclosure design. The work also includes base-plate concepts, structural interfaces, mounting hardware, and camera integration.",
+      "The project connects moving hardware with the structure and enclosure around it. The camera bracket shown here is one component within that broader system."
     ],
     "analysisHeading": "Approach and current state",
     "analysis": [
-      "For the optical mount, the camera hole pattern and connector envelope came from the supplied camera model. The rail inspection also showed why ordinary T-slot hardware could not simply be assumed.",
-      "Native geometry checks covered the part, flat pattern, material readback, and the scoped camera/rail intersections. Full field of view, toolhead travel, physical rail drilling, cable bend radius, and fastener retention still require integration checks."
+      "I consider how motion-system interfaces, structural framing, enclosure geometry, and supporting hardware fit together, including assembly access, packaging, and serviceability.",
+      "Detailed checks are tied to specific component revisions. The camera-mount geometry and fit checks below describe that subsystem; they do not establish whole-machine motion performance or enclosure qualification."
     ],
     "storySections": [
+      {
+        "eyebrow": "Motion systems",
+        "title": "Motion systems within the mechanical assembly.",
+        "body": [
+          "Motion-system work is a primary part of my contribution to ISAME. It is considered together with the structure and enclosure, rather than as an isolated mechanism.",
+          "The mechanical layout brings moving hardware, supports, base-plate interfaces, and surrounding components into a shared assembly context."
+        ]
+      },
+      {
+        "eyebrow": "Enclosure design",
+        "title": "An enclosure that works with the system inside it.",
+        "body": [
+          "Enclosure work connects the frame and base to mounting, access, and packaging needs. These interfaces affect how the system is assembled, serviced, and integrated.",
+          "Camera mounts are one example of that broader integration work: their placement depends on the rail geometry, surrounding hardware, cable access, and the region being observed."
+        ]
+      },
       {
         "eyebrow": "Measured interfaces",
         "title": "The bracket follows the hardware.",
