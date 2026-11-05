@@ -38,7 +38,7 @@ test("project index discovers and opens the recovered work", async ({ page }) =>
   await isame.click();
   await expect(page.getByRole("heading", { level: 1, name: "ISAME Motion Systems and Enclosure" })).toBeVisible();
   await page.getByRole("link", { name: /back to projects/i }).click();
-  await expect(page).toHaveURL(/\/projects\/?$/);
+  await expect(page).toHaveURL(/\/projects\/?#project-isame-camera-integration$/);
 });
 
 test("ISAME describes motion systems and enclosure as the primary contribution", async ({ page }) => {
