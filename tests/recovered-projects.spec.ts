@@ -35,7 +35,7 @@ test("project index discovers and opens the recovered work", async ({ page }) =>
   }
   const isame = collection.locator("a[href='/projects/isame-camera-integration'], a[href='/projects/isame-camera-integration/']").filter({ visible: true }).first();
   await isame.scrollIntoViewIfNeeded();
-  await isame.click();
+  await Promise.all([page.waitForURL(/\/projects\/isame-camera-integration\/?$/, { waitUntil: "domcontentloaded" }), isame.click()]);
   await expect(page.getByRole("heading", { level: 1, name: "ISAME Motion Systems and Enclosure" })).toBeVisible();
   await page.getByRole("link", { name: /back to projects/i }).click();
   await expect(page).toHaveURL(/\/projects\/?#project-isame-camera-integration$/);
