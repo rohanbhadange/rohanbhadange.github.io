@@ -1,6 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/config/portfolio";
-import { ProjectCard } from "./project-card";
-
-export function ProjectGrid({ projects }: { projects: Project[] }) {
-  return <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12">{projects.map((project, index) => <ProjectCard key={project.slug} project={project} priority={index === 0} />)}</div>;
+export function ProjectGrid({ projects, headingLevel = 2 }: { projects: Project[]; headingLevel?: 2 | 3 }) {
+const Heading = headingLevel === 3 ? "h3" : "h2";
+return <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">{projects.map((project,index)=><li key={project.slug} className={project.featured ? "sm:col-span-2 lg:col-span-1" : ""}><Link id={headingLevel===2 ? `project-${project.slug}` : undefined} href={`/projects/${project.slug}/`} className={`project-card focus-ring group flex h-full scroll-mt-6 scroll-mb-32 flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-950 ${project.featured ? "sm:flex-row lg:flex-col" : ""}`}><div className={`relative shrink-0 overflow-hidden bg-zinc-100 ${project.featured ? "aspect-[4/3] sm:w-[44%] lg:w-full" : "aspect-[16/10]"}`}><Image src={project.imageUrl} alt={project.mediaAlt} fill priority={index===0} sizes="(min-width: 1280px) 380px, (min-width: 640px) 45vw, 95vw" className={`project-card-image ${project.mediaFit==='contain' ? 'object-contain p-4' : 'object-cover'}`} /></div><div className="min-w-0 flex-1 p-5"><p className="font-mono text-[10px] uppercase tracking-wider text-cyan-200">{project.featured ? 'Featured / ' : ''}{project.discipline}</p><div className="mt-3 flex items-start justify-between gap-3"><Heading className={`${project.featured ? 'text-2xl' : 'text-xl'} font-medium leading-tight tracking-tight`}>{project.title}</Heading><ArrowUpRight aria-hidden="true" className="project-card-arrow h-5 w-5 shrink-0" /></div><p className="mt-3 line-clamp-3 text-sm leading-6 text-zinc-400">{project.excerpt}</p></div></Link></li>)}</ul>;
 }

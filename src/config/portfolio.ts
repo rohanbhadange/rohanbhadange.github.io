@@ -390,8 +390,7 @@ export const portfolio = {
         imageUrl: "/media/projects/rover-autonomy-simulator/autonomy-stack-diagram.png",
         mediaAlt: "Architecture diagram for the rover autonomy simulator",
         mediaFit: "contain",
-        featured: true,
-        featuredRank: 2,
+        featured: false,
         size: "standard",
         overviewHeading: "Truth versus belief",
         overview: [
@@ -440,8 +439,7 @@ export const portfolio = {
         imageUrl: "/media/scout-poster.png",
         posterUrl: "/media/scout-poster.png",
         mediaAlt: "Scout autonomous robotic platform",
-        featured: true,
-        featuredRank: 1,
+        featured: true, featuredRank: 3,
         size: "standard",
         overviewHeading: "Social perception",
         overview: [
@@ -545,8 +543,7 @@ export const portfolio = {
         imageUrl: "/media/projects/hevt-thermal-waiver/image5.png",
         mediaAlt: "HEVT vehicle and coolant architecture showing the team-added thermal path",
         mediaFit: "contain",
-        featured: true,
-        featuredRank: 3,
+        featured: false,
         size: "wide",
         overviewHeading: "The waiver question",
         overview: [
@@ -985,3 +982,5 @@ export const portfolio = {
 export function getProject(slug: string): Project | undefined {
   return portfolio.projects.items.find((project) => project.slug === slug);
 }
+
+export function getOrderedProjects(): Project[] { return [...portfolio.projects.items].sort((a,b)=>Number(b.featured)-Number(a.featured)||(a.featured?(a.featuredRank??99)-(b.featuredRank??99):a.order-b.order)); }

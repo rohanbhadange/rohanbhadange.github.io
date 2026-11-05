@@ -102,3 +102,9 @@ button { font: inherit; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .technology-marquee-track { animation: none !important; }
 }
+
+.project-card { transition: border-color 200ms, box-shadow 200ms, transform 200ms; }
+.project-card-image, .project-card-arrow { transition: transform 200ms; }
+.project-card:focus-visible { border-color: #7dd3fc; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .project-card:hover { transform: translateY(-3px); border-color: #7dd3fc; box-shadow: 0 8px 24px #0005; } .project-card:hover .project-card-image { transform: scale(1.02); } .project-card:hover .project-card-arrow { transform: translate(2px,-2px); } }
+@media (prefers-reduced-motion: reduce) { .project-card, .project-card-image, .project-card-arrow { transition: none; } }

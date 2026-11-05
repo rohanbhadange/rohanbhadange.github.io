@@ -51,9 +51,8 @@ test("3D enhancement only renders on desktop", async ({ page }) => {
 
 test("signature galleries and sticky documentation render", async ({ page }) => {
   await page.goto("/projects");
-  await expect(page.getByTestId("unfurling-gallery")).toBeVisible();
-  await expect(page.getByRole("region", { name: "Field notes image gallery" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Open case study/ }).first()).toBeVisible();
+  await expect(page.getByTestId("project-catalog")).toBeVisible();
+  await expect(page.locator(".project-card").first()).toBeVisible();
   await page.goto("/projects/scout-autonomous-platform");
   await expect(page.getByTestId("sticky-figure-stack")).toBeVisible();
 });

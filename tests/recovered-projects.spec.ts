@@ -18,7 +18,7 @@ for (const project of recoveredProjects) {
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(1);
-    await expect(page.getByRole("link", { name: /back to projects/i })).toHaveAttribute("href", /^\/projects\/?$/);
+    await expect(page.getByRole("link", { name: /back to projects/i })).toHaveAttribute("href", /^\/projects\/?#project-/);
   });
 }
 
@@ -26,8 +26,9 @@ test("project index discovers and opens the recovered work", async ({ page }) =>
   // This journey renders the index, a case study, and the index again.
   test.setTimeout(90_000);
   await page.goto("/projects/", { waitUntil: "domcontentloaded" });
-  const desktop = page.viewportSize()!.width >= 768;
-  const collection = desktop ? page.getByTestId("project-catalog") : page.getByTestId("unfurling-gallery");
+  const collection = page.getByTestId("project-catalog");
+  await expect(collection.locator("a")).toHaveCount(16);
+  for (const [index,slug] of ["isame-camera-integration","rtx-drone-integration","scout-autonomous-platform"].entries()) await expect(collection.locator("a").nth(index)).toHaveAttribute("href", `/projects/${slug}/`);
   await expect(collection).toBeVisible();
   for (const project of recoveredProjects) {
     await expect(collection.locator(`a[href='/projects/${project.slug}'], a[href='/projects/${project.slug}/']`).first()).toBeVisible();
@@ -47,3 +48,6 @@ test("ISAME describes motion systems and enclosure as the primary contribution",
   await expect(page.getByRole("heading", { name: "An enclosure that works with the system inside it." })).toBeVisible();
   await expect(page.getByText("My ISAME work spans the mechanical system", { exact: false })).toBeVisible();
 });
+
+test("Clicky resolves to Nudge",async({page})=>{await page.goto('/projects/engineering-clicky/');await expect(page).toHaveURL(/nudge-desktop-companion\/?$/);});
+test("homepage shows the featured trio",async({page})=>{await page.goto('/');const cards=page.locator('#projects-preview .project-card');await expect(cards).toHaveCount(3);for(const [i,slug] of ['isame-camera-integration','rtx-drone-integration','scout-autonomous-platform'].entries()) await expect(cards.nth(i)).toHaveAttribute('href',`/projects/${slug}/`);});

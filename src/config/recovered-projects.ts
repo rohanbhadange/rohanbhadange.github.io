@@ -1,6 +1,4 @@
 import type { Project } from "./portfolio";
-
-// Publication snapshot: 2026-11-02. Source evidence lives in the private project archive.
 export const recoveredProjects: Project[] = [
   {
     "order": 8,
@@ -16,9 +14,9 @@ export const recoveredProjects: Project[] = [
       "Design iteration"
     ],
     "imageUrl": "/projects/recovered/rtx-drone.webp",
-    "mediaAlt": "RTX AVC Drone Integration — project evidence",
+    "mediaAlt": "RTX AVC Drone Integration \u2014 project evidence",
     "mediaFit": "contain",
-    "featured": false,
+    "featured": true,
     "size": "standard",
     "overviewHeading": "The project",
     "overview": [
@@ -52,7 +50,7 @@ export const recoveredProjects: Project[] = [
           },
           {
             "label": "Current state",
-            "value": "R3.2 power cassette — work in progress"
+            "value": "R3.2 power cassette \u2014 work in progress"
           }
         ]
       },
@@ -65,7 +63,8 @@ export const recoveredProjects: Project[] = [
         ]
       }
     ],
-    "figures": []
+    "figures": [],
+    "featuredRank": 2
   },
   {
     "order": 9,
@@ -81,7 +80,7 @@ export const recoveredProjects: Project[] = [
       "Mechanisms"
     ],
     "imageUrl": "/projects/recovered/servo-linkage.webp",
-    "mediaAlt": "Gripper Linkage Development — project evidence",
+    "mediaAlt": "Gripper Linkage Development \u2014 project evidence",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
@@ -121,7 +120,7 @@ export const recoveredProjects: Project[] = [
           },
           {
             "label": "Native solid volume",
-            "value": "1,789.685 mm³"
+            "value": "1,789.685 mm\u00b3"
           }
         ]
       },
@@ -152,7 +151,7 @@ export const recoveredProjects: Project[] = [
     "imageUrl": "/projects/recovered/isame-corner-bracket.webp",
     "mediaAlt": "Camera bracket developed as one part of the wider ISAME mechanical-system work",
     "mediaFit": "contain",
-    "featured": false,
+    "featured": true,
     "size": "standard",
     "overviewHeading": "The project",
     "overview": [
@@ -199,7 +198,7 @@ export const recoveredProjects: Project[] = [
           },
           {
             "label": "Camera hole pattern",
-            "value": "28.8 × 28.8 mm"
+            "value": "28.8 \u00d7 28.8 mm"
           }
         ]
       },
@@ -212,7 +211,8 @@ export const recoveredProjects: Project[] = [
         ]
       }
     ],
-    "figures": []
+    "figures": [],
+    "featuredRank": 1
   },
   {
     "order": 11,
@@ -228,7 +228,7 @@ export const recoveredProjects: Project[] = [
       "Numerical verification"
     ],
     "imageUrl": "/projects/recovered/pegda-assembly.webp",
-    "mediaAlt": "PEGDA Tooling and Diffusion — project evidence",
+    "mediaAlt": "PEGDA Tooling and Diffusion \u2014 project evidence",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
@@ -262,8 +262,8 @@ export const recoveredProjects: Project[] = [
         "eyebrow": "Numerical evidence",
         "title": "Refinement and conservation before interpretation.",
         "body": [
-          "Baseline spatial refinement changed the compared field by about 0.008 C₀; temporal refinement changed it by about 0.000795 C₀. Both were below the recorded 0.02 C₀ criterion.",
-          "The baseline source mean at six hours is 0.4515 C₀ under the illustrative coefficients. Halving or doubling gel diffusivity shifts that result, showing why measured material properties matter. Sensitivity cases reused the baseline grid and time schedule rather than receiving independent refinement."
+          "Baseline spatial refinement changed the compared field by about 0.008 C\u2080; temporal refinement changed it by about 0.000795 C\u2080. Both were below the recorded 0.02 C\u2080 criterion.",
+          "The baseline source mean at six hours is 0.4515 C\u2080 under the illustrative coefficients. Halving or doubling gel diffusivity shifts that result, showing why measured material properties matter. Sensitivity cases reused the baseline grid and time schedule rather than receiving independent refinement."
         ],
         "figure": {
           "src": "/projects/recovered/pegda-diffusion.webp",
@@ -275,15 +275,15 @@ export const recoveredProjects: Project[] = [
         "technicalDetails": [
           {
             "label": "Baseline spatial difference",
-            "value": "0.00799 C₀"
+            "value": "0.00799 C\u2080"
           },
           {
             "label": "Baseline temporal difference",
-            "value": "0.000795 C₀"
+            "value": "0.000795 C\u2080"
           },
           {
             "label": "Water / gel diffusivity",
-            "value": "5 × 10⁻¹⁰ / 1 × 10⁻¹⁰ m²/s"
+            "value": "5 \u00d7 10\u207b\u00b9\u2070 / 1 \u00d7 10\u207b\u00b9\u2070 m\u00b2/s"
           }
         ]
       }
@@ -304,7 +304,7 @@ export const recoveredProjects: Project[] = [
       "Tolerance studies"
     ],
     "imageUrl": "/projects/recovered/cycloidal-actuator.webp",
-    "mediaAlt": "Cycloidal Actuator — project evidence",
+    "mediaAlt": "Cycloidal Actuator \u2014 project evidence",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
@@ -380,7 +380,7 @@ export const recoveredProjects: Project[] = [
       "Inverse kinematics"
     ],
     "imageUrl": "/projects/recovered/ball-plate.webp",
-    "mediaAlt": "Ball-on-Plate Controls — project evidence",
+    "mediaAlt": "Ball-on-Plate Controls \u2014 project evidence",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
@@ -428,7 +428,7 @@ export const recoveredProjects: Project[] = [
       "Experimental correlation"
     ],
     "imageUrl": "/projects/recovered/modal-shape.webp",
-    "mediaAlt": "Modal Analysis and Correlation — project evidence",
+    "mediaAlt": "Modal Analysis and Correlation \u2014 project evidence",
     "mediaFit": "contain",
     "featured": false,
     "size": "standard",
@@ -440,7 +440,7 @@ export const recoveredProjects: Project[] = [
     "analysisHeading": "Approach and current state",
     "analysis": [
       "The recorded analysis uses a 5 mm global mesh and a signed nine-point first-mode comparison. The Modal Assurance Criterion is 0.97734, indicating strong agreement in the compared shape.",
-      "The first three model frequencies are approximately 10–15% below the experimental peaks. Shape correlation does not remove that frequency discrepancy. Raw voltage channels are not presented as calibrated force or acceleration."
+      "The first three model frequencies are approximately 10\u201315% below the experimental peaks. Shape correlation does not remove that frequency discrepancy. Raw voltage channels are not presented as calibrated force or acceleration."
     ],
     "storySections": [
       {
@@ -529,7 +529,14 @@ export const recoveredProjects: Project[] = [
         ]
       }
     ],
-    "figures": []
+    "figures": [
+      {
+        "src": "/projects/recovered/engineering-clicky.webp",
+        "alt": "Nudge desktop interface checkpoint",
+        "caption": "Archived desktop interface checkpoint collected under the Clicky name.",
+        "fit": "contain"
+      }
+    ]
   },
   {
     "order": 16,
@@ -574,45 +581,6 @@ export const recoveredProjects: Project[] = [
         "body": [
           "Pending and failed indexing jobs are revisited during synchronization. The cursor and overlap window separate collection progress from successful indexing.",
           "The repository contains local-fake tests for ingestion, persistence, routing, and the web interface. Live provider performance was not measured for this portfolio case study."
-        ]
-      }
-    ],
-    "figures": []
-  },
-  {
-    "order": 17,
-    "slug": "engineering-clicky",
-    "title": "EngineeringClicky",
-    "discipline": "Software / AI Tools",
-    "year": "2026",
-    "excerpt": "An engineering desktop-assistant prototype with an on-screen guidance panel and a cursor buddy.",
-    "tags": [
-      "Desktop UI",
-      "Engineering workflows",
-      "Prototyping"
-    ],
-    "imageUrl": "/projects/recovered/engineering-clicky.webp",
-    "mediaAlt": "EngineeringClicky desktop panel captured during a UI review",
-    "mediaFit": "contain",
-    "featured": false,
-    "size": "standard",
-    "overviewHeading": "The project",
-    "overview": [
-      "EngineeringClicky explores short, contextual guidance alongside engineering software. The preserved desktop review includes the assistant panel and buddy during an ANSYS Workbench workflow.",
-      "The project separates desktop, backend, and Worker workspaces. Its captured review material makes the interaction concept visible alongside the source."
-    ],
-    "analysisHeading": "Design decisions",
-    "analysis": [
-      "The UI encourages one short question and a next step, keeping the assistant close to the current task. The preserved review rubric checks legibility, overflow, hierarchy, copy, control states, and visual balance.",
-      "The image is an actual archived panel capture from a development checkpoint. A fresh end-to-end provider session was not exercised for this case study."
-    ],
-    "storySections": [
-      {
-        "eyebrow": "System design",
-        "title": "Review the interface that actually appeared.",
-        "body": [
-          "The captured panel shows the question entry and companion interaction. Screenshots are useful evidence for interface development, but do not establish that every advertised engineering workflow was exercised.",
-          "The archive keeps the review brief, state record, and source locations together so the next iteration can compare the implementation with the visible result."
         ]
       }
     ],

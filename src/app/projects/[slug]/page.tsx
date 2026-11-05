@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <main id="main-content">
       <header className="border-b border-zinc-800 pt-24">
         <div className="container-shell">
-          <Link href="/projects" className="focus-ring inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-zinc-50">
+          <Link href={`/projects/#project-${project.slug}`} className="focus-ring inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-zinc-50">
             <ArrowLeft size={16} />
             {portfolio.labels.backToProjects}
           </Link>
