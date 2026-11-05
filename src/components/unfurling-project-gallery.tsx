@@ -87,9 +87,12 @@ export function UnfurlingProjectGallery({ projects }: { projects: Project[] }) {
   const rotateY = useTransform(gatedProgress, [0, .7], [reduce ? 0 : -24, 0]);
   const rotateZ = useTransform(gatedProgress, [0, .7], [reduce ? 0 : 7, 0]);
   const scale = useTransform(gatedProgress, [0, .7], [reduce ? 1 : .78, 1]);
-  const columns = [0, 1, 2].map((offset) => projects.filter((_, index) => index % 3 === offset));
+  // Keep the bounded animation a showcase. The complete collection below must
+  // remain in normal document flow as more projects are published.
+  const columns = [0, 1, 2].map((offset) => projects.slice(0, 3).filter((_, index) => index % 3 === offset));
 
   return (
+    <>
     <section ref={ref} data-testid="unfurling-gallery" className="relative md:h-[300vh]">
       <div className="flex snap-x gap-4 overflow-x-auto px-5 py-16 md:hidden">
         {projects.map((project) => (
@@ -109,5 +112,14 @@ export function UnfurlingProjectGallery({ projects }: { projects: Project[] }) {
         </motion.div>
       </div>
     </section>
+    <section data-testid="project-catalog" className="container-shell hidden pb-24 pt-12 md:block">
+      <h2 className="mb-8 text-3xl font-medium tracking-tight text-zinc-50">All projects</h2>
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} project={project} sizes="(min-width: 1280px) 30vw, 45vw" />
+        ))}
+      </div>
+    </section>
+    </>
   );
 }

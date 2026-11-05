@@ -22,11 +22,22 @@ for (const project of recoveredProjects) {
   });
 }
 
-test("project index discovers the recovered work", async ({ page }) => {
+test("project index discovers and opens the recovered work", async ({ page }) => {
+  // This journey renders the index, a case study, and the index again.
+  test.setTimeout(90_000);
   await page.goto("/projects/", { waitUntil: "domcontentloaded" });
+  const desktop = page.viewportSize()!.width >= 768;
+  const collection = desktop ? page.getByTestId("project-catalog") : page.getByTestId("unfurling-gallery");
+  await expect(collection).toBeVisible();
   for (const project of recoveredProjects) {
-    await expect(page.locator(`a[href='/projects/${project.slug}'], a[href='/projects/${project.slug}/']`).first()).toBeAttached();
+    await expect(collection.locator(`a[href='/projects/${project.slug}'], a[href='/projects/${project.slug}/']`).first()).toBeVisible();
   }
+  const isame = collection.locator("a[href='/projects/isame-camera-integration'], a[href='/projects/isame-camera-integration/']").filter({ visible: true }).first();
+  await isame.scrollIntoViewIfNeeded();
+  await isame.click();
+  await expect(page.getByRole("heading", { level: 1, name: "ISAME Motion Systems and Enclosure" })).toBeVisible();
+  await page.getByRole("link", { name: /back to projects/i }).click();
+  await expect(page).toHaveURL(/\/projects\/?$/);
 });
 
 test("ISAME describes motion systems and enclosure as the primary contribution", async ({ page }) => {
